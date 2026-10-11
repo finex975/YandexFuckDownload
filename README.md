@@ -18,7 +18,7 @@
 Требуется Python 3.9+.
 
     git clone https://github.com/finex975/YandexFuckDownload/
-    cd yandex-music-downloader
+    cd YandexFuckDownload
     python main.py
 
 Скрипт сам установит зависимости при первом запуске.
