@@ -17,7 +17,7 @@
 
 Требуется Python 3.9+.
 
-    git clone [https://github.com/FinexStudio/yandex-music-downloader.git
+    git clone https://github.com/finex975/YandexFuckDownload/
     cd yandex-music-downloader
     python main.py
 
