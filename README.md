@@ -1,4 +1,4 @@
-# Yandex Music Downloader
+# YandexFuckDownloader
 
 Скачивай свои любимые треки из Яндекс.Музыки на локальный ПК.
 
