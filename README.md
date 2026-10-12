@@ -42,6 +42,36 @@
 | Один трек | https://music.yandex.ru/track/ID |
 
 ### Папка сохранения
+## 📸 Скриншоты
+
+### Главное окно
+
+<img width="900" src="screenshots/main.png" alt="Yandex Music Downloader — главное окно"/>
+
+### Авторизация через OAuth Device Flow
+
+<table>
+<tr>
+<td width="50%">
+<img src="screenshots/auth-code.png" alt="Код авторизации в приложении"/>
+<p align="center"><i>1. Код показывается в приложении</i></p>
+</td>
+<td width="50%">
+<img src="screenshots/auth-yandex.png" alt="Страница Яндекс-авторизации"/>
+<p align="center"><i>2. Вводится на странице Яндекса</i></p>
+</td>
+</tr>
+</table>
+
+### 14 языков интерфейса
+
+<p align="center">
+<img width="320" src="screenshots/languages.png" alt="Выбор языка — 14 языков"/>
+</p>
+
+### Скачивание в процессе
+
+<img width="900" src="screenshots/downloading.png" alt="Скачивание музыки в процессе"/>
 
 По умолчанию: C:/Users/Имя/Music/YandexMusic/
 
