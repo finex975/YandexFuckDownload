@@ -2,13 +2,10 @@ import os
 import sys
 import importlib
 
-# --- Frozen (PyInstaller) support ---
 FROZEN = getattr(sys, "frozen", False)
 
 if FROZEN:
-    # Ресурсы распакованы сюда (translations.py и пр.)
     RESOURCE_DIR = sys._MEIPASS
-    # settings.json и app.log — рядом с .exe
     APP_DIR = os.path.dirname(sys.executable)
     sys.path.insert(0, RESOURCE_DIR)
 else:
@@ -28,7 +25,6 @@ NEEDED_PACKAGES = ["yandex-music", "requests"]
 
 
 def check_and_install():
-    # В frozen-режиме всё уже внутри .exe — ставить нечего
     if FROZEN:
         if not check_tkinter():
             sys.exit(1)
@@ -103,7 +99,7 @@ except ImportError:
 APP_VERSION = "1.2.1"
 SETTINGS_FILE = os.path.join(APP_DIR, "settings.json")
 LOG_FILE = os.path.join(APP_DIR, "app.log")
-UPDATE_URL = "https://api.github.com/repos/FinexStudio/yandex-music-downloader/releases/latest"
+UPDATE_URL = "https://api.github.com/repos/finex975/YandexFuckDownload/releases/latest"
 KOFI_URL = "https://ko-fi.com/finex_studio"
 
 DEFAULT_DELAY = 2.0
