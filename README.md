@@ -2,7 +2,7 @@
 
 <img src="screenshots/icon.png" width="120" alt="Yandex Fuck Downloader"/>
 
-# Yandex Music Downloader
+# Yandex Fuck Downloader
 
 **Скачивай свои любимые треки из Яндекс.Музыки на локальный ПК**
 
