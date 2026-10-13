@@ -12,9 +12,26 @@
 [![Version](https://img.shields.io/badge/Version-1.2.1-8b5cf6?style=for-the-badge&logo=github&logoColor=white)](https://github.com/finex975/YandexFuckDownload/releases)
 
 [![Download](https://img.shields.io/badge/⬇_Download_for_Windows-FF5E5B?style=for-the-badge)](https://github.com/finex975/YandexFuckDownload/releases)
+[![Wiki](https://img.shields.io/badge/📚_Wiki-Documentation-4fc3d9?style=for-the-badge)](https://github.com/finex975/YandexFuckDownload/wiki)
 [![Ko-fi](https://img.shields.io/badge/☕_Support_on_Ko--fi-FF5E5B?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/finex_studio)
 
 </div>
+
+---
+
+## 📚 Документация
+
+Полная документация доступна в **[Wiki](https://github.com/finex975/YandexFuckDownload/wiki)**:
+
+| Раздел | Описание |
+|:-------|:---------|
+| **[📥 Установка и запуск](https://github.com/finex975/YandexFuckDownload/wiki/Установка-и-запуск)** | Как скачать и запустить программу |
+| **[📖 Использование](https://github.com/finex975/YandexFuckDownload/wiki/Использование)** | Как пользоваться приложением |
+| **[❓ Частые вопросы (FAQ)](https://github.com/finex975/YandexFuckDownload/wiki/Частые-вопросы)** | Ответы на популярные вопросы |
+| **[🛠️ Устранение неполадок](https://github.com/finex975/YandexFuckDownload/wiki/Устранение-неполадок)** | Что делать, если что-то пошло не так |
+| **[💻 Разработка](https://github.com/finex975/YandexFuckDownload/wiki/Разработка)** | Для тех, кто хочет внести вклад |
+| **[🤖 Android-версия](https://github.com/finex975/YandexFuckDownload/wiki/Android-версия)** | Информация о мобильной версии |
+| **[📄 Лицензия](https://github.com/finex975/YandexFuckDownload/wiki/Лицензия)** | Юридическая информация |
 
 ---
 
@@ -125,6 +142,8 @@ python main.py
 
 При первом запуске скрипт **сам установит зависимости** — `yandex-music` и `requests`.
 
+> Подробная инструкция — в вики: **[📥 Установка и запуск](https://github.com/finex975/YandexFuckDownload/wiki/Установка-и-запуск)**
+
 ---
 
 ## 📖 Как пользоваться
@@ -153,6 +172,8 @@ python main.py
 
 Каждый плейлист — в **отдельной подпапке** со своим названием.
 
+> Подробная инструкция — в вики: **[📖 Использование](https://github.com/finex975/YandexFuckDownload/wiki/Использование)**
+
 ---
 
 ## ⚠️ Ограничения
@@ -162,6 +183,8 @@ python main.py
 
 - **429 Concurrency limit** — Яндекс ограничивает частоту запросов. Программа сама пережидает лимит (экспоненциальная задержка 8 → 60 секунд с джиттером).
 - **Неофициальный API** — при изменениях на стороне Яндекса возможны перебои в работе.
+
+Если что-то не работает — загляни в **[🛠️ Устранение неполадок](https://github.com/finex975/YandexFuckDownload/wiki/Устранение-неполадок)**.
 
 ---
 
@@ -197,6 +220,16 @@ python main.py
 
 ---
 
+## 🤝 Вклад в проект
+
+Хочешь помочь? Загляни в вики: **[💻 Разработка](https://github.com/finex975/YandexFuckDownload/wiki/Разработка)**.
+
+- Форкни репозиторий
+- Создай ветку под фичу или фикс
+- Отправь Pull Request
+
+---
+
 ## ☕ Поддержать разработчика
 
 <div align="center">
@@ -217,6 +250,8 @@ python main.py
 
 **Музыка принадлежит её правообладателям.** Программа предоставляет только инструмент для скачивания в личных целях.
 
+Подробнее — в вики: **[📄 Лицензия](https://github.com/finex975/YandexFuckDownload/wiki/Лицензия)**.
+
 ---
 
 <div align="center">
@@ -224,5 +259,7 @@ python main.py
 **Made with ❤️ by [FinexStudio](https://github.com/finex975)**
 
 <sub>© 2026 FinexStudio. Не связан с Яндекс.Музыкой.</sub>
+
+[![Wiki](https://img.shields.io/badge/📚_Полная_документация-Wiki-4fc3d9?style=for-the-badge)](https://github.com/finex975/YandexFuckDownload/wiki)
 
 </div>
