@@ -7,8 +7,6 @@ source.dir = .
 source.include_exts = py,png,jpg,kv,atlas,json
 source.exclude_dirs = screenshots,.git,.github,__pycache__,bin,.buildozer
 
-p4a.branch = develop
-
 version = 1.2.1
 
 requirements = hostpython3==3.11.9,python3==3.11.9,kivy==2.2.1,yandex-music,requests,urllib3,certifi,chardet,idna,android,pillow
