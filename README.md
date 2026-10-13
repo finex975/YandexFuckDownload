@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="screenshots/icon.png" width="120" alt="Yandex Music Downloader"/>
+<img src="screenshots/icon.png" width="120" alt="Yandex Fuck Downloader"/>
 
 # Yandex Music Downloader
 
