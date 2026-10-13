@@ -9,7 +9,7 @@ source.exclude_dirs = screenshots,.git,.github,__pycache__,bin,.buildozer
 
 version = 1.2.1
 
-requirements = python3==3.11.9,kivy==2.3.0,yandex-music,requests,urllib3,certifi,chardet,idna,android,pillow
+requirements = hostpython3==3.11.9,python3==3.11.9,kivy==2.3.0,yandex-music,requests,urllib3,certifi,chardet,idna,android,pillow
 
 orientation = portrait
 fullscreen = 0
