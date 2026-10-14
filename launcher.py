@@ -3,7 +3,13 @@ import sys
 import subprocess
 import shutil
 
-DEPS = ["yandex-music>=3.2.2", "requests>=2.28.0"]
+DEPS = [
+    "yandex-music>=3.2.2",
+    "requests>=2.28.0",
+    "mutagen>=1.47.0",
+    "Pillow>=10.0.0",
+    "pywebview>=5.0",
+]
 
 
 def find_python():
