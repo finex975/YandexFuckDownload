@@ -1,265 +1,378 @@
 <div align="center">
 
-<img src="screenshots/icon.png" width="120" alt="Yandex Fuck Downloader"/>
+# 🎵 Yandex Music Downloader
 
-# Yandex Fuck Downloader
+**Современный загрузчик музыки из Яндекс.Музыки с поддержкой плейлистов, альбомов и любимых треков**
 
-**Скачивай свои любимые треки из Яндекс.Музыки на локальный ПК**
+[![Version](https://img.shields.io/badge/version-2.0.0-purple?style=for-the-badge)](https://github.com/finex975/YandexFuckDownload/releases)
+[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-blue?style=for-the-badge)](https://github.com/finex975/YandexFuckDownload/releases)
+[![Python](https://img.shields.io/badge/python-3.9%2B-yellow?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![License](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)](LICENSE)
 
-[![Python](https://img.shields.io/badge/Python-3.9+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![Platform](https://img.shields.io/badge/Platform-Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)](#)
-[![License](https://img.shields.io/badge/License-MIT-22c55e?style=for-the-badge&logo=opensourceinitiative&logoColor=white)](LICENSE)
-[![Version](https://img.shields.io/badge/Version-1.2.1-8b5cf6?style=for-the-badge&logo=github&logoColor=white)](https://github.com/finex975/YandexFuckDownload/releases)
-
-[![Download](https://img.shields.io/badge/⬇_Download_for_Windows-FF5E5B?style=for-the-badge)](https://github.com/finex975/YandexFuckDownload/releases)
-[![Wiki](https://img.shields.io/badge/📚_Wiki-Documentation-4fc3d9?style=for-the-badge)](https://github.com/finex975/YandexFuckDownload/wiki)
-[![Ko-fi](https://img.shields.io/badge/☕_Support_on_Ko--fi-FF5E5B?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/finex_studio)
+[**Скачать**](https://github.com/finex975/YandexFuckDownload/releases/latest) ·
+[**Возможности**](#-возможности) ·
+[**Скриншоты**](#-скриншоты) ·
+[**Установка**](#-установка) ·
+[**FAQ**](#-faq)
 
 </div>
 
 ---
 
-## 📚 Документация
+## 🎬 О проекте
 
-Полная документация доступна в **[Wiki](https://github.com/finex975/YandexFuckDownload/wiki)**:
+**Yandex Music Downloader** — это приложение с современным интерфейсом для скачивания музыки из Яндекс.Музыки на ваш компьютер. Поддерживает плейлисты, альбомы, отдельные треки и раздел «Мне нравится». Автоматически вшивает обложки, метаданные и тексты песен.
 
-| Раздел | Описание |
-|:-------|:---------|
-| **[📥 Установка и запуск](https://github.com/finex975/YandexFuckDownload/wiki/Установка-и-запуск)** | Как скачать и запустить программу |
-| **[📖 Использование](https://github.com/finex975/YandexFuckDownload/wiki/Использование)** | Как пользоваться приложением |
-| **[❓ Частые вопросы (FAQ)](https://github.com/finex975/YandexFuckDownload/wiki/Частые-вопросы)** | Ответы на популярные вопросы |
-| **[🛠️ Устранение неполадок](https://github.com/finex975/YandexFuckDownload/wiki/Устранение-неполадок)** | Что делать, если что-то пошло не так |
-| **[💻 Разработка](https://github.com/finex975/YandexFuckDownload/wiki/Разработка)** | Для тех, кто хочет внести вклад |
-| **[🤖 Android-версия](https://github.com/finex975/YandexFuckDownload/wiki/Android-версия)** | Информация о мобильной версии |
-| **[📄 Лицензия](https://github.com/finex975/YandexFuckDownload/wiki/Лицензия)** | Юридическая информация |
-
----
-
-## ✨ Возможности
-
-<table>
-<tr>
-<td width="50%" valign="top">
-
-### 🎵 Скачивание
-
-- **🎧 Мне нравится** — вся коллекция лайков одной кнопкой
-- **📀 Плейлисты** — по ссылке на публичный плейлист
-- **💿 Альбомы** — целиком, со всеми треками
-- **🎼 Один трек** — по ссылке вида `/track/12345`
-
-### 🎚 Качество звука
-
-- **Auto** — оптимальное доступное
-- **MP3 320 kbps** — высокое
-- **MP3 192 kbps** — стандартное
-- **FLAC** — lossless
-
-</td>
-<td width="50%" valign="top">
-
-### 🔐 Авторизация
-
-- **OAuth Device Flow** — вход через браузер
-- Без ручного копирования токенов
-- Токен сохраняется автоматически
-
-### 🎨 Интерфейс
-
-- Тёмная тема с неоновыми акцентами
-- **14 языков** — от русского до корейского
-- Плавные анимации, кастомный прогресс-бар
-
-### ⚙️ Умное скачивание
-
-- **Авто-retry** при лимитах Яндекса
-- **Докачка** — уже скачанное пропускается
-- **Автоустановка** зависимостей при первом запуске
-- Логирование в `app.log`
-
-</td>
-</tr>
-</table>
+> ⚡ **Один EXE-файл. Никаких зависимостей. Запустил — работает.**
 
 ---
 
 ## 📸 Скриншоты
 
-<div align="center">
-
-### Главное окно
-
-<img width="880" src="screenshots/main.png" alt="Yandex Music Downloader — главное окно"/>
-
-### Авторизация через OAuth Device Flow
-
 <table>
-<tr>
-<td width="50%">
-<img src="screenshots/auth-code.png" alt="Код авторизации"/>
-<p align="center"><sub>1. Код показывается в приложении</sub></p>
-</td>
-<td width="50%">
-<img src="screenshots/auth-yandex.png" alt="Страница Яндекса"/>
-<p align="center"><sub>2. Вводится на странице Яндекса</sub></p>
-</td>
-</tr>
+  <tr>
+    <td align="center" width="50%">
+      <img src="screenshots/main.png" alt="Главный экран" /><br/>
+      <b>Главный экран — настройки источника, качества и папки</b>
+    </td>
+    <td align="center" width="50%">
+      <img src="screenshots/auth.png" alt="Авторизация" /><br/>
+      <b>Авторизация через OAuth Device Flow</b>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <img src="screenshots/preview.png" alt="Выбор треков" /><br/>
+      <b>Превью плейлиста с выбором треков</b>
+    </td>
+    <td align="center" width="50%">
+      <img src="screenshots/reset.png" alt="Сброс данных" /><br/>
+      <b>Гибкий сброс — выбери что удалить</b>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" colspan="2">
+      <img src="screenshots/yandex.png" alt="Яндекс авторизация" /><br/>
+      <b>Код копируется автоматически, браузер открывается сам</b>
+    </td>
+  </tr>
 </table>
-
-### 14 языков интерфейса
-
-<img width="280" src="screenshots/languages.png" alt="Выбор языка"/>
-
-### Скачивание в процессе
-
-<img width="880" src="screenshots/downloading.png" alt="Скачивание в процессе"/>
-
-</div>
 
 ---
 
-## 🚀 Быстрый старт
+## ✨ Возможности
 
-### Вариант 1 — Готовый `.exe` (рекомендуется)
+### 🎯 Скачивание
+- **4 режима источника:** «Мне нравится», плейлист, альбом, отдельный трек
+- **4 варианта качества:** Auto, MP3 320, MP3 192, FLAC
+- **Параллельная загрузка** — 3 трека одновременно, до 5 потоков на метаданные
+- **Докачка** — если загрузка прервалась, приложение подхватит с того же места
+- **Пропуск дубликатов** — уже скачанные файлы не качаются повторно
+- **Обход 429** — авто-retry с экспоненциальной задержкой (8 → 60 сек)
+- **Устойчивость к сбоям** — недоступные треки (регион/подписка/удалён) не валят очередь
 
-1. Скачай последний релиз: [**Releases**](https://github.com/finex975/YandexFuckDownload/releases)
-2. Запусти `YandexFuckDownload.exe`
-3. Готово
+### 🎨 Интерфейс
+- **9 тем оформления:** Dark, Sunset, Emerald, AMOLED, Light, Lunar Blue, Samurai Ink, Matte Black, Neonic
+- **14 языков:** RU, EN, UK, BE, KK, UZ, TR, RO, DE, FR, IT, ZH, JA, KO
+- **Виджет часов и календаря** с навигацией по месяцам
+- **Плавные анимации** и адаптивная вёрстка
+- **Живой прогресс** с оценкой оставшегося времени (ETA)
 
-> [!NOTE]
-> **Windows SmartScreen** может показать предупреждение — это нормально для приложений без платной цифровой подписи.
-> Нажми **«Подробнее»** → **«Выполнить в любом случае»**.
+### 🎧 Метаданные
+- **Вшивание обложек** в MP3 (ID3) и FLAC
+- **Теги:** название, исполнитель, альбом, год, номер трека, жанр
+- **Тексты песен** сохраняются рядом с аудио (`.lrc`)
+- **Структура папок** `Artist / Album / NN - Title` (опционально)
 
-### Вариант 2 — Из исходников
+### 🛠️ Управление
+- **Пауза / продолжить** загрузку в один клик
+- **Сворачивание в системный трей** с меню
+- **Экспорт / импорт** настроек в JSON
+- **Гибкий сброс данных** — по частям или всё сразу
+- **Статистика** в SQLite: количество, размер, топ-артисты
+- **Автопроверка** при старте: 10 пунктов + тост с результатом
+- **Горячие клавиши:** `Ctrl+Enter`, `Ctrl+L`, `Ctrl+Shift+P`, `Ctrl+Shift+R`
 
-**Требуется:** Python 3.9+ | Windows / Linux / macOS
+### 🔐 Безопасность
+- **Токен в системном keyring** — Windows Credential Manager, macOS Keychain, Linux SecretService
+- **Fallback** — обфусцированный `token.dat` на случай отсутствия keyring
+- **Правильное хранение** — данные в `%LOCALAPPDATA%`, а не рядом с exe
+
+---
+
+## 📥 Установка
+
+### Windows
+
+1. Скачай `YandexMusicDownloader.exe` из [**последнего релиза**](https://github.com/finex975/YandexFuckDownload/releases/latest)
+2. Запусти файл — Windows SmartScreen может предупредить, нажми **«Подробнее» → «Выполнить в любом случае»**
+3. Готово! Первый запуск ~3–7 секунд (распаковка)
+
+> **Требования:** Windows 10/11 с установленным WebView2 Runtime (обычно уже есть)
+
+### Linux
+
+```bash
+# Скачай архив из релиза и распакуй
+unzip YandexMusicDownloader-Linux.zip
+cd YandexMusicDownloader
+./YandexMusicDownloader
+```
+
+> **Требования:** GTK 3, WebKitGTK 4.1
+
+```bash
+sudo apt install python3-gi python3-gi-cairo gir1.2-gtk-3.0 gir1.2-webkit2-4.1
+```
+
+### macOS
+
+Скачай `YandexMusicDownloader.app` из релиза и перетащи в `Applications`.
+
+---
+
+## 🚀 Использование
+
+### 1. Авторизация
+
+Нажми **«Войти в Яндекс»** — откроется окно с кодом:
+
+1. Код **автоматически копируется** в буфер обмена
+2. Нажми **«Открыть Яндекс»** — браузер откроется на странице авторизации
+3. Введи код и подтверди вход
+4. Вернись в приложение — токен подхватится автоматически
+
+### 2. Выбор источника
+
+| Режим | Что скачает |
+|---|---|
+| **Мне нравится** | Все треки из раздела «Мне нравится» |
+| **Плейлист** | Все треки из плейлиста по ссылке |
+| **Альбом** | Все треки из альбома |
+| **Один трек** | Один конкретный трек |
+
+### 3. Настройки
+
+- **Качество** — `Auto` (рекомендуется), `MP3 320`, `MP3 192`, `FLAC`
+- **Папка** — куда сохранять файлы (по умолчанию `~/Music/YandexMusic`)
+- **Задержка** — пауза между треками (по умолчанию 2 сек)
+- **Повторов** — количество попыток при ошибке (по умолчанию 6)
+- **Тексты песен** — сохранять `.lrc` рядом с аудио
+- **Структура папок** — сортировка `Artist / Album / NN - Title`
+
+### 4. Превью и запуск
+
+- **«Загрузить список»** — покажет превью всех треков с поиском и фильтрами
+- **«Скачать»** — начнёт загрузку всей очереди
+- **«Скачать выбранные»** — только отмеченные в превью
+
+---
+
+## 🛠️ Сборка из исходников
+
+### Требования
+- Python 3.9+
+- pip
+
+### Windows
+
+```cmd
+git clone https://github.com/finex975/YandexFuckDownload.git
+cd YandexFuckDownload
+build.bat
+```
+
+### Linux / macOS
 
 ```bash
 git clone https://github.com/finex975/YandexFuckDownload.git
 cd YandexFuckDownload
-python main.py
+chmod +x build.sh
+./build.sh
 ```
 
-При первом запуске скрипт **сам установит зависимости** — `yandex-music` и `requests`.
+### Ручная сборка
 
-> Подробная инструкция — в вики: **[📥 Установка и запуск](https://github.com/finex975/YandexFuckDownload/wiki/Установка-и-запуск)**
+```bash
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+pip install pyinstaller
+pyinstaller --clean --noconfirm yandex_music_downloader.spec
+```
 
----
-
-## 📖 Как пользоваться
-
-### 1. Авторизация
-
-<table>
-<tr><td width="30"><b>1.</b></td><td>Нажми <b>🚀 Войти в Яндекс</b></td></tr>
-<tr><td><b>2.</b></td><td>В открывшемся окне скопируй код кнопкой <b>📋 Копировать код</b></td></tr>
-<tr><td><b>3.</b></td><td>Браузер откроется сам — вставь код на странице Яндекса</td></tr>
-<tr><td><b>4.</b></td><td>Токен подставится автоматически, авторизация завершена</td></tr>
-</table>
-
-### 2. Выбор источника
-
-| Режим | Что вводить |
-|:------|:------------|
-| **🎧 Мне нравится** | Ничего — вся коллекция лайков |
-| **📀 Плейлист** | `https://music.yandex.ru/users/USER/playlists/ID` |
-| **💿 Альбом** | `https://music.yandex.ru/album/ID` |
-| **🎼 Один трек** | `https://music.yandex.ru/track/ID` |
-
-### 3. Папка сохранения
-
-По умолчанию: `C:\Users\Имя\Music\YandexMusic\`
-
-Каждый плейлист — в **отдельной подпапке** со своим названием.
-
-> Подробная инструкция — в вики: **[📖 Использование](https://github.com/finex975/YandexFuckDownload/wiki/Использование)**
+Результат: `dist/YandexMusicDownloader.exe`
 
 ---
 
-## ⚠️ Ограничения
+## 🧱 Технологии
 
-> [!WARNING]
-> **Только личное использование.** Распространение скачанных треков нарушает авторские права и правила сервиса Яндекс.Музыки.
-
-- **429 Concurrency limit** — Яндекс ограничивает частоту запросов. Программа сама пережидает лимит (экспоненциальная задержка 8 → 60 секунд с джиттером).
-- **Неофициальный API** — при изменениях на стороне Яндекса возможны перебои в работе.
-
-Если что-то не работает — загляни в **[🛠️ Устранение неполадок](https://github.com/finex975/YandexFuckDownload/wiki/Устранение-неполадок)**.
+| Компонент | Технология |
+|---|---|
+| **Backend** | Python 3.9+, [yandex-music](https://github.com/MarshalX/yandex-music-api) |
+| **GUI** | [pywebview](https://pywebview.flowrl.com/) + HTML/CSS/JS |
+| **Аудио** | [mutagen](https://mutagen.readthedocs.io/) — метаданные ID3/FLAC |
+| **Обложки** | [Pillow](https://python-pillow.org/) |
+| **Статистика** | SQLite |
+| **Трей** | [pystray](https://github.com/moses-palmer/pystray) |
+| **Токен** | [keyring](https://github.com/jaraco/keyring) |
+| **Сборка** | [PyInstaller](https://pyinstaller.org/) |
+| **CI/CD** | GitHub Actions |
 
 ---
 
-## 🛠️ Технологии
+## 📁 Структура проекта
+
+```
+YandexFuckDownload/
+├── main.py                          # Точка входа
+├── api.py                           # JS API (вызывается из UI)
+├── paths.py                         # Системные пути (%LOCALAPPDATA%)
+├── startup_check.py                 # Автопроверка при запуске
+├── metadata_utils.py                # ID3/FLAC + обложки + тексты
+├── secure_store.py                  # Хранение токена
+├── history.py                       # История докачки
+├── stats.py                         # SQLite-статистика
+├── tray.py                          # Системный трей
+├── notify.py                        # Уведомления ОС
+├── log_setup.py                     # Логирование с ротацией
+├── updater.py                       # Проверка обновлений
+├── translations.py                  # 14 языков
+├── web/                             # UI
+│   ├── index.html
+│   ├── style.css
+│   └── app.js
+├── yandex_music_downloader.spec     # PyInstaller spec
+├── build.bat / build.sh             # Скрипты сборки
+├── requirements.txt
+└── .github/workflows/build.yml      # CI/CD
+```
+
+---
+
+## 🌍 Локализация
+
+Приложение переведено на **14 языков**:
+
+🇷🇺 Русский · 🇬🇧 English · 🇺🇦 Українська · 🇧🇾 Беларуская · 🇰🇿 Қазақша · 🇺🇿 O'zbekcha · 🇹🇷 Türkçe · 🇷🇴 Română · 🇩🇪 Deutsch · 🇫🇷 Français · 🇮🇹 Italiano · 🇨🇳 中文 · 🇯🇵 日本語 · 🇰🇷 한국어
+
+Хочешь добавить свой язык? Отредактируй `translations.py` и отправь PR.
+
+---
+
+## 🎨 Темы
+
+| Тема | Описание |
+|---|---|
+| 🌙 **Dark** | Классическая тёмная (по умолчанию) |
+| 🌅 **Sunset** | Тёплые оранжево-розовые оттенки |
+| 🌲 **Emerald** | Изумрудная зелень |
+| ⬛ **AMOLED** | Чистый чёрный для OLED-экранов |
+| ☀️ **Light** | Светлая дневная |
+| 🌌 **Lunar Blue** | Глубокий синий космос |
+| 🎴 **Samurai Ink** | Японский минимализм |
+| 🖤 **Matte Black** | Матовый чёрный |
+| 💜 **Neonic** | Неоновый фиолетовый |
+
+Тема переключается в один клик, сохраняется в настройках.
+
+---
+
+## ❓ FAQ
+
+<details>
+<summary><b>Где хранятся настройки и статистика?</b></summary>
+
+- **Windows:** `%LOCALAPPDATA%\FinexStudio\YandexMusicDownloader\`
+- **Linux:** `~/.local/share/YandexMusicDownloader/`
+- **macOS:** `~/Library/Application Support/YandexMusicDownloader/`
+
+Там же: `settings.json`, `history.json`, `stats.db`, `logs/`, `token.dat`
+
+</details>
+
+<details>
+<summary><b>Почему Windows Defender ругается на EXE?</b></summary>
+
+Стандартная проблема всех PyInstaller-сборок. Причина — отсутствие цифровой подписи. Код открыт, можешь проверить. Для запуска: **«Подробнее» → «Выполнить в любом случае»**.
+
+</details>
+
+<details>
+<summary><b>Некоторые треки не скачиваются, что делать?</b></summary>
+
+Скорее всего они недоступны через API Яндекса (региональная блокировка, нужна подписка Плюс, трек удалён). Открой трек в браузере — если серый, значит скачать не получится. Приложение покажет `⛔ Недоступен` и продолжит качать остальные.
+
+</details>
+
+<details>
+<summary><b>Как войти по токену?</b></summary>
+
+Нажми **«Войти в Яндекс»** и используй OAuth Device Flow. Вводить токен вручную не нужно — код показывается прямо в приложении.
+
+</details>
+
+<details>
+<summary><b>Можно ли качать в FLAC?</b></summary>
+
+Да, выбери `FLAC` в настройках качества. Учти: не все треки имеют FLAC-версию — для таких приложение автоматически упадёт на mp3.
+
+</details>
+
+<details>
+<summary><b>Как сбросить все данные?</b></summary>
+
+Кнопка **«🗑 Сброс»** в футере → отметь нужные пункты (токен, статистика, логи, история, настройки) → **«Сбросить выбранное»**.
+
+</details>
+
+<details>
+<summary><b>Как перенести настройки на другой ПК?</b></summary>
+
+Кнопка **«⬆ Экспорт»** — сохранит `settings.json`. На другом ПК нажми **«⬇ Импорт»** и выбери файл.
+
+</details>
+
+---
+
+## 🤝 Contributing
+
+Pull requests приветствуются! По крупным изменениям сначала открой issue для обсуждения.
+
+**Полезные ссылки:**
+- 🐛 [Сообщить о баге](https://github.com/finex975/YandexFuckDownload/issues/new?template=bug_report.md)
+- 💡 [Предложить фичу](https://github.com/finex975/YandexFuckDownload/issues/new?template=feature_request.md)
+- 🌍 [Добавить язык](https://github.com/finex975/YandexFuckDownload/blob/main/translations.py)
+
+---
+
+## ⚠️ Отказ от ответственности
+
+Приложение предназначено **только для личного использования**. Скачивание контента из Яндекс.Музыки может нарушать их условия использования. Автор не несёт ответственности за любое использование этого ПО.
+
+**Пожалуйста, поддерживайте артистов и покупайте подписку Яндекс.Плюс.**
+
+---
+
+## 📜 Лицензия
+
+MIT License — см. [LICENSE](LICENSE)
+
+---
+
+## 🙏 Благодарности
+
+- [**MarshalX**](https://github.com/MarshalX) — за [yandex-music](https://github.com/MarshalX/yandex-music-api)
+- [**pywebview**](https://pywebview.flowrl.com/) — за кроссплатформенный WebView
+- [**PyInstaller**](https://pyinstaller.org/) — за сборку EXE
+- Всем, кто тестировал и присылал багрепорты
+
+---
 
 <div align="center">
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![Tkinter](https://img.shields.io/badge/Tkinter-FF6F00?style=flat-square)
-![Requests](https://img.shields.io/badge/Requests-2CA5E0?style=flat-square)
-![yandex-music](https://img.shields.io/badge/yandex--music-FF0000?style=flat-square)
+**Made with 💜 by [FinexStudio](https://github.com/finex975)**
 
-</div>
-
-- **Python 3.9+** — язык разработки
-- **Tkinter** — нативный GUI без внешних зависимостей
-- [**yandex-music**](https://github.com/MarshalX/yandex-music-api) — неофициальная библиотека API Яндекс.Музыки
-- **requests** — HTTP-запросы
-
----
-
-## 🗺️ Планы развития
-
-- [x] Скачивание «Мне нравится», плейлистов, альбомов, треков
-- [x] OAuth Device Flow
-- [x] 14 языков интерфейса
-- [x] Выбор качества MP3 / FLAC
-- [x] Автопроверка обновлений
-- [ ] Вшивание обложек и метаданных в MP3
-- [ ] Прогресс-бар с ETA
-- [ ] Цифровая подпись `.exe` (SignPath Foundation)
-- [ ] Сборка `.exe` через GitHub Actions
-
----
-
-## 🤝 Вклад в проект
-
-Хочешь помочь? Загляни в вики: **[💻 Разработка](https://github.com/finex975/YandexFuckDownload/wiki/Разработка)**.
-
-- Форкни репозиторий
-- Создай ветку под фичу или фикс
-- Отправь Pull Request
-
----
-
-## ☕ Поддержать разработчика
-
-<div align="center">
-
-Если программа оказалась полезной — можешь угостить меня кофе.
-
-<a href="https://ko-fi.com/finex_studio">
-<img src="https://storage.ko-fi.com/cdn/kofi3.png?v=3" height="40" alt="Buy Me a Coffee at ko-fi.com"/>
-</a>
-
-</div>
-
----
-
-## 📄 Лицензия
-
-Распространяется под лицензией **MIT**. См. [LICENSE](LICENSE) для подробностей.
-
-**Музыка принадлежит её правообладателям.** Программа предоставляет только инструмент для скачивания в личных целях.
-
-Подробнее — в вики: **[📄 Лицензия](https://github.com/finex975/YandexFuckDownload/wiki/Лицензия)**.
-
----
-
-<div align="center">
-
-**Made with ❤️ by [FinexStudio](https://github.com/finex975)**
-
-<sub>© 2026 FinexStudio. Не связан с Яндекс.Музыкой.</sub>
-
-[![Wiki](https://img.shields.io/badge/📚_Полная_документация-Wiki-4fc3d9?style=for-the-badge)](https://github.com/finex975/YandexFuckDownload/wiki)
+⭐ Поставь звезду, если проект оказался полезным!
 
 </div>
