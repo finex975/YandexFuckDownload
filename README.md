@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🎵 Yandex Music Downloader
+# 🎵 Yandex Fuck Downloader
 
 **Современный загрузчик музыки из Яндекс.Музыки с поддержкой плейлистов, альбомов и любимых треков**
 
