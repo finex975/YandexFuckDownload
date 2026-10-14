@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<title>Yandex Music Downloader</title>
+<meta name="color-scheme" content="dark light">
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem('ymd-theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+      var l = localStorage.getItem('ymd-lang');
+      if (l) document.documentElement.setAttribute('lang', l);
+    } catch (e) {}
+  })();
+</script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="update-banner" class="update-banner hidden">
+  <span class="emoji">🎉</span>
+  <span id="update-text" data-i18n="update_available">Доступна новая версия</span>
+  <button id="btn-update-open" class="btn small success" data-i18n="btn_update_download">Скачать</button>
+  <button id="btn-update-close" class="btn ghost tiny" title="Закрыть">✕</button>
+</div>
+
+<div id="app">
+
+  <div id="stars" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <h1 data-i18n="app_title">YANDEX MUSIC DOWNLOADER</h1>
+      <div class="subtitle" data-i18n="powered_by">POWERED BY FINEXSTUDIO</div>
+    </div>
+
+    <!-- 🕐 ЧАСЫ + КАЛЕНДАРЬ -->
+    <div class="clock-widget" id="clock-widget">
+      <button class="clock-btn" id="clock-btn" type="button">
+        <span class="clock-time" id="clock-time">--:--</span>
+        <span class="clock-date" id="clock-date">—</span>
+      </button>
+      <div class="clock-dropdown" id="clock-dropdown">
+        <div class="calendar">
+          <div class="calendar-head">
+            <button class="cal-nav" id="cal-prev" type="button" aria-label="Prev">‹</button>
+            <div class="cal-month" id="cal-month">—</div>
+            <button class="cal-nav" id="cal-next" type="button" aria-label="Next">›</button>
+          </div>
+          <div class="cal-weekdays" id="cal-weekdays"></div>
+          <div class="cal-grid" id="cal-grid"></div>
+          <div class="cal-footer">
+            <button class="btn ghost tiny" id="cal-today" data-i18n="calendar_today">Сегодня</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="topbar-right">
+      <span class="version" id="version">v2.0.0</span>
+
+      <div class="picker theme-picker" id="theme-picker">
+        <button class="picker-btn" id="theme-btn" type="button">
+          <span class="picker-icon emoji">🎨</span>
+          <span class="picker-label" id="theme-label">Dark</span>
+          <span class="picker-chev">▾</span>
+        </button>
+        <div class="picker-dropdown" id="theme-dropdown"></div>
+      </div>
+
+      <div class="picker lang-picker" id="lang-picker">
+        <button class="picker-btn" id="lang-btn" type="button">
+          <span class="picker-icon emoji">🌐</span>
+          <span class="picker-label" id="lang-label">Русский</span>
+          <span class="picker-chev">▾</span>
+        </button>
+        <div class="picker-dropdown" id="lang-dropdown"></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <div id="settings-block" class="collapsible">
+      <div class="collapsible-inner">
+
+        <div class="settings-grid">
+
+          <section class="card auth-card">
+            <h2 class="section-title accent" data-i18n="section_auth">АВТОРИЗАЦИЯ</h2>
+            <div class="robot-wrap">
+              <svg class="yandex-robot" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <line x1="50" y1="14" x2="50" y2="28" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                <circle class="robot-antenna" cx="50" cy="11" r="4.5" fill="currentColor"/>
+                <rect x="22" y="28" width="56" height="52" rx="14" stroke="currentColor" stroke-width="2.5"/>
+                <rect x="30" y="38" width="40" height="26" rx="6" fill="currentColor" opacity="0.12"/>
+                <circle class="robot-eye" cx="42" cy="50" r="4" fill="currentColor"/>
+                <circle class="robot-eye" cx="58" cy="50" r="4" fill="currentColor"/>
+                <path class="robot-smile" d="M 40 60 Q 50 67 60 60" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                <line x1="12" y1="48" x2="22" y2="48" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="78" y1="48" x2="88" y2="48" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="36" y1="80" x2="36" y2="90" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="64" y1="80" x2="64" y2="90" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <input type="password" id="token" autocomplete="off" data-i18n-ph="token_ph" placeholder="Токен">
+            <button id="btn-login" class="btn success" data-i18n="btn_login">Войти в Яндекс</button>
+          </section>
+
+          <section class="card">
+            <h2 class="section-title accent2" data-i18n="section_source">ИСТОЧНИК</h2>
+            <div class="row">
+              <label data-i18n="label_mode">Режим</label>
+              <div class="mode-group" id="mode-group">
+                <button class="mode-btn" data-mode="likes"    data-i18n="mode_likes">Мне нравится</button>
+                <button class="mode-btn" data-mode="playlist" data-i18n="mode_playlist">Плейлист</button>
+                <button class="mode-btn" data-mode="album"    data-i18n="mode_album">Альбом</button>
+                <button class="mode-btn" data-mode="track"    data-i18n="mode_track">Один трек</button>
+              </div>
+            </div>
+            <div class="row">
+              <label data-i18n="label_quality">Качество</label>
+              <select id="quality">
+                <option value="auto"    data-i18n="q_auto">Авто</option>
+                <option value="mp3_320" data-i18n="q_mp3_320">MP3 320</option>
+                <option value="mp3_192" data-i18n="q_mp3_192">MP3 192</option>
+                <option value="flac"    data-i18n="q_flac">FLAC</option>
+              </select>
+            </div>
+            <div class="row">
+              <label data-i18n="label_url">Ссылка</label>
+              <input type="text" id="url" placeholder="https://music.yandex.ru/...">
+            </div>
+            <div class="row">
+              <button id="btn-paste" class="btn accent2" data-i18n="btn_paste">Вставить</button>
+              <button id="btn-save-url" class="btn tiny" title="Сохранять ссылку">🔒</button>
+            </div>
+          </section>
+
+          <section class="card">
+            <h2 class="section-title success" data-i18n="section_dest">НАЗНАЧЕНИЕ</h2>
+            <div class="row">
+              <label data-i18n="label_path">Папка</label>
+              <input type="text" id="path">
+              <button id="btn-browse" class="btn warn" data-i18n="btn_browse">Обзор</button>
+            </div>
+            <div class="row small">
+              <label data-i18n="label_delay">Задержка</label>
+              <input type="number" id="delay" min="0.5" step="0.5" class="num">
+            </div>
+            <div class="row small">
+              <label data-i18n="label_retries">Повторов</label>
+              <input type="number" id="retries" min="1" step="1" class="num">
+              <label data-i18n="label_retry_base">Пауза</label>
+              <input type="number" id="retry_base" min="1" step="1" class="num">
+            </div>
+            <div class="row small">
+              <label data-i18n="field_lyrics">Тексты песен</label>
+              <input type="checkbox" id="save-lyrics" class="checkbox">
+            </div>
+            <div class="row small">
+              <label data-i18n="field_structure">Структура папок</label>
+              <input type="checkbox" id="folder-structure" class="checkbox" data-i18n-title="field_structure_hint">
+            </div>
+          </section>
+
+        </div>
+
+        <div class="stats-bar" id="stats-bar">
+          <span class="stats-label" data-i18n="stats_label">📊 СТАТИСТИКА</span>
+          <span class="stats-sep">·</span>
+          <span class="stats-value" id="stats-total" data-i18n="stats_downloaded">Скачано: 0</span>
+          <span class="stats-sep">·</span>
+          <span class="stats-value" id="stats-size">0 Б</span>
+          <span class="stats-sep">·</span>
+          <span class="stats-value stats-top" id="stats-top"></span>
+          <button id="stats-refresh" class="btn ghost tiny" style="margin-left:auto" data-i18n-title="stats_refresh">↻</button>
+        </div>
+
+        <div id="resume-banner" class="resume-banner hidden">
+          <div class="resume-text">
+            <span class="emoji">⏳</span>
+            <span id="resume-text">Найдена незавершённая загрузка</span>
+          </div>
+          <div class="resume-actions">
+            <button id="btn-resume" class="btn success" data-i18n="btn_resume_dl">▶ Продолжить докачку</button>
+            <button id="btn-resume-dismiss" class="btn ghost" data-i18n="resume_reset">Сбросить</button>
+          </div>
+        </div>
+
+        <div class="start-wrap">
+          <button id="btn-preview" class="btn accent big" data-i18n="btn_preview">📋 Загрузить список</button>
+          <button id="btn-start" class="btn-start-main" type="button">
+            <span class="emoji">🎵</span>
+            <span data-i18n="btn_download">Скачать</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="preview-block" class="collapsible collapsed">
+      <div class="collapsible-inner">
+        <section class="card preview-card">
+          <div class="preview-head">
+            <h2 class="section-title accent2" data-i18n="preview_title">ВЫБОР ТРЕКОВ</h2>
+            <span class="preview-counter" id="preview-count">0 / 0</span>
+            <button id="btn-preview-back" class="btn ghost small" title="Вернуться">✕</button>
+          </div>
+
+          <div class="preview-toolbar">
+            <input type="text" id="preview-search" class="preview-search" data-i18n-ph="preview_search_ph" placeholder="Поиск по названию, артисту, альбому...">
+            <select id="preview-filter-mode" class="preview-filter">
+              <option value="all"        data-i18n="preview_filter_all">Все</option>
+              <option value="selected"   data-i18n="preview_filter_selected">Только выбранные</option>
+              <option value="unselected" data-i18n="preview_filter_unselected">Только не выбранные</option>
+            </select>
+            <button id="btn-preview-all"    class="btn tiny accent" data-i18n="preview_btn_all">Все</button>
+            <button id="btn-preview-none"   class="btn tiny ghost"  data-i18n="preview_btn_none">Ничего</button>
+            <button id="btn-preview-invert" class="btn tiny"        data-i18n="preview_btn_invert">Инверт.</button>
+          </div>
+
+          <div class="preview-list" id="preview-list">
+            <div class="preview-empty" data-i18n="preview_empty">Список пуст</div>
+          </div>
+
+          <div class="preview-actions">
+            <button id="btn-download-selected" class="btn-start-main" type="button" disabled>
+              🎵 <span id="dl-selected-text">Скачать выбранные (0)</span>
+            </button>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div id="runtime-block" class="collapsible collapsed">
+      <div class="collapsible-inner">
+
+        <section class="card control-card">
+          <h2 class="section-title warn" data-i18n="section_ctrl">УПРАВЛЕНИЕ</h2>
+          <div class="row">
+            <button id="btn-pause" class="btn warn big" disabled>⏸ <span id="pause-text">Пауза</span></button>
+            <button id="btn-cancel" class="btn danger big" disabled data-i18n="btn_cancel">Отмена</button>
+            <button id="btn-open-folder" class="btn accent big" disabled>📂 <span id="open-folder-text">Открыть папку</span></button>
+          </div>
+          <div class="progress" id="progress">
+            <div class="progress-bar" id="progress-bar"></div>
+            <div class="progress-text" id="progress-text">— / —</div>
+          </div>
+          <div class="status-row">
+            <span class="dot" id="status-dot"></span>
+            <span class="status-text" id="status-text" data-i18n="status_ready">Готов к работе</span>
+          </div>
+        </section>
+
+        <section class="split">
+          <div class="panel">
+            <div class="panel-head">
+              <h2 class="section-title accent" data-i18n="section_log">ЖУРНАЛ</h2>
+              <button id="btn-copy-log" class="btn small" data-i18n="btn_copy_log">Копировать лог</button>
+            </div>
+            <div class="log" id="log"></div>
+          </div>
+          <div class="panel">
+            <div class="panel-head">
+              <h2 class="section-title accent2" data-i18n="section_tracks">СКАЧИВАЕТСЯ</h2>
+            </div>
+            <div class="tracks" id="tracks">
+              <div class="empty emoji">🎵</div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <span data-i18n="footer_left">FINEXSTUDIO © 2026</span>
+    <div class="footer-right">
+      <button id="btn-export" class="btn ghost tiny" data-i18n="btn_export">⬆ Экспорт</button>
+      <button id="btn-import" class="btn ghost tiny" data-i18n="btn_import">⬇ Импорт</button>
+      <button id="btn-tray"   class="btn ghost tiny" data-i18n="btn_to_tray">📥 В трей</button>
+      <button id="btn-reset"  class="btn ghost tiny" data-i18n="btn_reset_data">🗑 Сброс</button>
+      <span data-i18n="footer_right">yandex-music 3.2.2</span>
+    </div>
+  </footer>
+</div>
+
+<div class="modal-backdrop hidden" id="auth-modal">
+  <div class="modal">
+    <h2 data-i18n="auth_title">ВХОД В ЯНДЕКС</h2>
+    <p class="subtitle" data-i18n="auth_subtitle">OAuth Device Flow</p>
+    <p data-i18n="auth_code_label">Введите код:</p>
+    <div class="auth-code" id="auth-code">— — — —</div>
+    <p class="auth-url-row">
+      <span data-i18n="auth_opens_page">Откроется страница: </span>
+      <a href="#" id="auth-url">…</a>
+    </p>
+    <p class="auth-status" id="auth-status" data-i18n="auth_waiting">Ожидание кода…</p>
+    <div class="row center">
+      <button class="btn success" id="auth-copy" data-i18n="auth_copy_code">Копировать код</button>
+      <button class="btn accent"  id="auth-open" data-i18n="auth_open_yandex">Открыть Яндекс</button>
+    </div>
+    <div class="row center">
+      <button class="btn ghost tiny" id="auth-cancel" data-i18n="auth_cancel">Отмена</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop hidden" id="reset-modal">
+  <div class="modal reset-modal">
+    <h2 data-i18n="reset_title">🗑 СБРОС ДАННЫХ</h2>
+    <p class="subtitle" data-i18n="reset_subtitle">Что удалить? Отметь нужные пункты</p>
+
+    <div class="reset-list">
+      <label class="reset-item">
+        <input type="checkbox" id="reset-token" class="reset-check">
+        <div class="reset-info">
+          <div class="reset-title" data-i18n="reset_token">OAuth токен</div>
+          <div class="reset-sub" data-i18n="reset_token_desc">Выйти из аккаунта</div>
+        </div>
+      </label>
+
+      <label class="reset-item">
+        <input type="checkbox" id="reset-stats" class="reset-check">
+        <div class="reset-info">
+          <div class="reset-title" data-i18n="reset_stats">Статистика</div>
+          <div class="reset-sub" data-i18n="reset_stats_desc">История скачиваний</div>
+        </div>
+      </label>
+
+      <label class="reset-item">
+        <input type="checkbox" id="reset-logs" class="reset-check">
+        <div class="reset-info">
+          <div class="reset-title" data-i18n="reset_logs">Логи</div>
+          <div class="reset-sub" data-i18n="reset_logs_desc">Файлы logs/app.log*</div>
+        </div>
+      </label>
+
+      <label class="reset-item">
+        <input type="checkbox" id="reset-history" class="reset-check">
+        <div class="reset-info">
+          <div class="reset-title" data-i18n="reset_history">Список загрузок</div>
+          <div class="reset-sub" data-i18n="reset_history_desc">Отменить сессию докачки</div>
+        </div>
+      </label>
+
+      <label class="reset-item">
+        <input type="checkbox" id="reset-settings" class="reset-check">
+        <div class="reset-info">
+          <div class="reset-title" data-i18n="reset_settings">Настройки</div>
+          <div class="reset-sub" data-i18n="reset_settings_desc">Режим, папка, качество</div>
+        </div>
+      </label>
+    </div>
+
+    <div class="row center">
+      <button class="btn danger" id="btn-reset-confirm" data-i18n="reset_confirm">Сбросить выбранное</button>
+      <button class="btn ghost" id="btn-reset-cancel" data-i18n="reset_cancel">Отмена</button>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
